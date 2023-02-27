@@ -1,4 +1,3 @@
-import { Oval } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 import { selectFilteredContacts, selectIsLoading } from 'redux/selectors';
@@ -7,7 +6,6 @@ import { List, Text, Button, Item } from './ContactList.styled';
 export const ContactList = props => {
   const dispatch = useDispatch();
   const filteredContacts = useSelector(selectFilteredContacts);
-  const isLoading = useSelector(selectIsLoading);
 
   return (
     <List>
@@ -20,9 +18,6 @@ export const ContactList = props => {
             </Text>
             <Button
               onClick={() => {
-                if (isLoading) {
-                  return console.log('dasasdadsdsa');
-                }
                 dispatch(deleteContact(id));
               }}
             >

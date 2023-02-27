@@ -14,7 +14,7 @@ export const App = () => {
   const { isLoading, error } = useSelector(selectState);
   useEffect(() => {
     dispatch(fetchContacts());
-  }, [fetchContacts]);
+  }, [dispatch]);
 
   return (
     <Container>
